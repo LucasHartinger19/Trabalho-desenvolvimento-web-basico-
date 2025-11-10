@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MUSIC HUB - Listagem</title>
+    <link rel="stylesheet" href="listagem.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="logo">MUSIC HUB</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="usuario.html">Usuário</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="listagem.html">Biblioteca</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Listagem de músicas -->
+        <section>
+            <h2> Músicas Adicionadas</h2>
+            <table id="tabelaMusicas">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Duração</th>
+                        <th>Gênero</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Listagem de artistas -->
+        <section>
+            <h2> Artistas Adicionados</h2>
+            <table id="tabelaArtistas">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Gênero Principal</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Listagem de álbuns -->
+        <section>
+            <h2> Álbuns Adicionados</h2>
+            <table id="tabelaAlbuns">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Artista</th>
+                        <th>Ano</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+  <script>
+        // Função genérica para carregar e exibir tabelas
+        function carregarTabela(chave, idTabela, campos) {
+            const dados = JSON.parse(localStorage.getItem(chave)) || [];
+            const corpoTabela = document.querySelector(`#${idTabela} tbody`);
+            corpoTabela.innerHTML = "";
+
+            if (dados.length === 0) {
+                const linha = document.createElement("tr");
+                const celula = document.createElement("td");
+                celula.colSpan = campos.length + 1;
+                celula.textContent = "Nenhum registro encontrado.";
+                celula.style.textAlign = "center";
+                linha.appendChild(celula);
+                corpoTabela.appendChild(linha);
+                return;
+            }
+
+            dados.forEach((item, index) => {
+                const linha = document.createElement("tr");
+
+                campos.forEach(campo => {
+                    const celula = document.createElement("td");
+                    celula.textContent = item[campo] || "-";
+                    linha.appendChild(celula);
+                });
+
+                // Botão de exclusão
+                const celulaAcoes = document.createElement("td");
+                const botaoExcluir = document.createElement("button");
+                botaoExcluir.textContent = "Excluir";
+                botaoExcluir.classList.add("btn-excluir");
+
+                botaoExcluir.addEventListener("click", () => {
+                    if (confirm("Deseja realmente excluir este item?")) {
+                        excluirItem(chave, index);
+                    }
+                });
+
+                celulaAcoes.appendChild(botaoExcluir);
+                linha.appendChild(celulaAcoes);
+                corpoTabela.appendChild(linha);
+            });
+        }
+
+        // Função para excluir item e atualizar tabela
+        function excluirItem(chave, indice) {
+            const dados = JSON.parse(localStorage.getItem(chave)) || [];
+            dados.splice(indice, 1);
+            localStorage.setItem(chave, JSON.stringify(dados));
+            carregarTudo();
+        }
+
+        // Recarregar todas as tabelas
+        function carregarTudo() {
+            carregarTabela("musicas", "tabelaMusicas", ["nome", "duracao", "genero"]);
+            carregarTabela("artistas", "tabelaArtistas", ["nome", "genero"]);
+            carregarTabela("albuns", "tabelaAlbuns", ["nome", "artista", "ano"]);
+        }
+
+        carregarTudo();
+    </script>
+
+</body>
+</html>

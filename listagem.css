@@ -1,0 +1,111 @@
+/* Fundo geral e estrutura */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #0c0c0c, #1b1b1b);
+    color: #e0e0e0;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    border-bottom: 2px solid #00c8c8;
+    padding: 15px 40px;
+}
+
+.logo {
+    color: #00c8c8;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #00c8c8;
+}
+
+/* Área principal */
+main {
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Seções (tabelas de listagem) */
+section {
+    background-color: #111;
+    border: 1px solid #00c8c8;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px rgba(0, 200, 200, 0.2);
+}
+
+section h2 {
+    color: #00c8c8;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #00c8c8;
+    padding-bottom: 5px;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #00c8c8;
+    color: #000;
+    font-weight: bold;
+}
+
+td {
+    border-top: 1px solid #222;
+}
+
+tr:nth-child(even) {
+    background-color: #151515;
+}
+
+/* Botão de exclusão */
+.btn-excluir {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-excluir:hover {
+    background-color: #cc0000;
+}

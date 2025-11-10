@@ -1,0 +1,174 @@
+body {
+
+  background: linear-gradient(135deg, #000000, #1d2224, #1e282c);
+}
+/*
+  CABEÇALHO (HEADER)
+  ---------------------------------
+*/
+.cabecalho {
+    background-color: #000000; /* Fundo preto sólido */
+    color: #ffffff;
+    padding: 10px 0;
+    display: flex; /* Para alinhar o logo e o menu */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center;
+    border-bottom: 2px solid #00c4cc; /* Linha de destaque azul/ciano */
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 1.5em;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #00c4cc; /* Cor de destaque no logo */
+}
+
+/* Menu de Navegação */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #00c4cc; /* Destaque no hover */
+}
+
+/*
+  CONTAINER PRINCIPAL (MAIN)
+  ---------------------------------
+*/
+main {
+    max-width: 600px; /* Largura centralizada para o formulário */
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/*
+  CARDS DE FORMULÁRIO (cardLoginAdm)
+  ---------------------------------
+*/
+.cardLoginAdm {
+    background-color: #1e1e1e; /* Fundo do card ligeiramente mais claro que o body */
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+}
+
+/* Títulos de Seção */
+.cardLoginAdm h2 {
+    color: #00c4cc; /* Cor de destaque para os títulos de seção */
+    font-size: 1.6em;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+/* Subtítulos (Labels - Nome da Música, Duração, etc.) */
+.cardLoginAdm h3 {
+    color: #e0e0e0;
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+/*
+  CAMPOS DE INPUT
+  ---------------------------------
+*/
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333; /* Fundo do campo de input */
+    border: 1px solid #555;
+    color: #ffffff; /* Texto dentro do input branco */
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #00c4cc;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 196, 204, 0.5);
+}
+
+::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/*
+  BOTÕES
+  ---------------------------------
+*/
+.cardLoginAdm button {
+    background-color: #00c4cc;
+    color: #121212; /* Texto preto no botão ciano */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Ocupa a largura total do container */
+    margin-top: 10px;
+}
+
+.cardLoginAdm button:hover {
+    background-color: #00a0a8;
+    transform: translateY(-1px);
+}
+
+/*
+  LISTAS DE CADASTRADOS (Artistas Cadastrados, Álbums Registrados)
+  --------------------------------------------------------------
+*/
+#listaArtistasAdicionados h3,
+#listaAlbunsRegistrados h3 {
+    font-size: 1.2em;
+    color: #00c4cc;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+#listaArtistas,
+#listaAlbuns {
+    list-style: none;
+    padding: 15px 20px;
+    margin: 0 0 20px 0;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+#listaArtistas li,
+#listaAlbuns li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+}
+
+#listaArtistas li:last-child,
+#listaAlbuns li:last-child {
+    border-bottom: none;
+}

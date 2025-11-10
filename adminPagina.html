@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MUSIC HUB - Admin</title>
+    <link rel="stylesheet" href="adminPagina.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1 class="logo">MUSIC HUB</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="usuario.html">Usuário</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="listagem.html">Biblioteca</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="cardLoginAdm">
+            <h2>Adicionar Nova Música</h2>
+            <form id="formAdicionarMusica">
+
+                <h3>Nome da Música</h3>
+                <input type="text" id="nomeMusica" placeholder="Título da música" required>
+
+                <h3>Duração (min:seg)</h3>
+                <input type="text" id="duracaoMusica" placeholder="Ex: 3:45" required pattern="^\d{1,2}:\d{2}$"
+                    title="Formato exigido: mm:ss">
+
+                <h3>Gênero</h3>
+                <input type="text" id="generoMusica" placeholder="Ex: Pop, Rock, Eletrônica" required>
+
+                <button type="submit">Adicionar Música</button>
+            </form>
+        </section>
+
+
+
+
+        <section class="cardLoginAdm" style="margin-top: 20px;">
+            <h2>Adicionar Novo Artista</h2>
+            <form id="formAdicionarArtista">
+
+                <h3>Nome do Artista</h3>
+                <input type="text" id="nomeArtista" placeholder="Nome ou Banda" required>
+
+                <h3>Gênero Principal</h3>
+                <input type="text" id="generoArtista" placeholder="Ex: Pop, Hip Hop" required>
+
+                <button type="submit">Adicionar Artista</button>
+            </form>
+        </section>
+
+        <section class="cardLoginAdm" style="margin-top: 20px;">
+            <h2>Adicionar Novo Álbum</h2>
+            <form id="formAdicionarAlbum">
+
+                <h3>Nome do Álbum</h3>
+                <input type="text" id="nomeAlbum" placeholder="Título do álbum" required>
+
+                <h3>Artista</h3>
+                <input type="text" id="artistaAlbum" placeholder="Nome do artista" required>
+
+                <h3>Ano de Lançamento</h3>
+                <input type="number" id="anoAlbum" placeholder="Ex: 2024" min="1900" max="2100" required>
+
+                <button type="submit">Adicionar Álbum</button>
+            </form>
+        </section>
+
+        </main>
+       <script src="codigo.js"></script>
+
+</body>
