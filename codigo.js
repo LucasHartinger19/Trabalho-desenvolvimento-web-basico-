@@ -12,7 +12,7 @@ function validarLoginAdmin() {
   const senha = document.getElementById("senhaAdmin").value;
   const mensagemErro = document.getElementById("mensagemErro");
 
-  // Usuário e senha corretos (pode depois puxar do LocalStorage se quiser)
+  // Usuário e senha corretos
   const usuarioCorreto = "admin";
   const senhaCorreta = "123";
 
@@ -107,4 +107,5 @@ document.getElementById("formAdicionarAlbum").addEventListener("submit", functio
     alert("Álbum adicionado com sucesso!");
     window.location.href = "listagem.html";
 });
+
 
