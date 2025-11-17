@@ -22,14 +22,11 @@ function validarLoginAdmin() {
     return;
   }
 
-  // Verifica se o login está correto
   if (usuario === usuarioCorreto && senha === senhaCorreta) {
-    // Login bem-sucedido → redireciona
     mensagemErro.textContent = "";
     alert("Login realizado com sucesso!");
     window.location.href = "adminPagina.html";
   } else {
-    // Login incorreto → exibe mensagem
     mensagemErro.textContent = "Usuário ou senha incorretos!";
   }
 }
@@ -40,7 +37,7 @@ function validarLoginUsuario() {
   const senha = document.getElementById("senhaUsuario").value;
   const mensagemErro = document.getElementById("mensagemErro");
 
-  // Usuário e senha corretos (pode depois puxar do LocalStorage se quiser)
+  // Usuário e senha corretos
   const usuarioCorreto = "usuario";
   const senhaCorreta = "123";
 
@@ -50,27 +47,24 @@ function validarLoginUsuario() {
     return;
   }
 
-  // Verifica se o login está correto
   if (usuario === usuarioCorreto && senha === senhaCorreta) {
-    // Login bem-sucedido → redireciona
     mensagemErro.textContent = "";
     alert("Login realizado com sucesso!");
     window.location.href = "adminPagina.html";
   } else {
-    // Login incorreto → exibe mensagem
     mensagemErro.textContent = "Usuário ou senha incorretos!";
   }
 }
 
 
-// Função genérica para salvar dados no localStorage
+// Função para salvar dados no localStorage
 function salvarNoLocalStorage(chave, dados) {
     let lista = JSON.parse(localStorage.getItem(chave)) || [];
     lista.push(dados);
     localStorage.setItem(chave, JSON.stringify(lista));
 }
 
-// Formulário: MÚSICAS
+// MÚSICAS
 document.getElementById("formAdicionarMusica").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -85,7 +79,7 @@ document.getElementById("formAdicionarMusica").addEventListener("submit", functi
     window.location.href = "listagem.html";
 });
 
-// Formulário: ARTISTAS
+// ARTISTAS
 document.getElementById("formAdicionarArtista").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -99,7 +93,7 @@ document.getElementById("formAdicionarArtista").addEventListener("submit", funct
     window.location.href = "listagem.html";
 });
 
-// Formulário: ÁLBUNS
+// ÁLBUNS
 document.getElementById("formAdicionarAlbum").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -113,3 +107,4 @@ document.getElementById("formAdicionarAlbum").addEventListener("submit", functio
     alert("Álbum adicionado com sucesso!");
     window.location.href = "listagem.html";
 });
+
